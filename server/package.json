@@ -1,0 +1,24 @@
+{
+  "name": "weekend-challenge2",
+  "version": "1.0.0",
+  "description": "[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zuberabdikadir/weekend-challenge2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zuberabdikadir/weekend-challenge2/issues"
+  },
+  "homepage": "https://github.com/zuberabdikadir/weekend-challenge2#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jquery": "^3.5.1"
+  }
+}
