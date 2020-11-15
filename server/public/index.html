@@ -14,19 +14,23 @@
     <h2>Server Side Calculator</h2>
     <div>
         <input type="text" placeholder="Number 1" id="number1" />
-        <button id="multiplyBtn">*</button>
-        <button id="addBtn">+</button>
-        <button id="subtractBtn">-</button>
-        <button id="divideBtn">/</button>
+        <button id="multiplyBtn" value="*" class="math">*</button>
+        <button id="addBtn" value="+" class="math">+</button>
+        <button id="subtractBtn" value="-" class="math">-</button>
+        <button id="divideBtn" value="/" class="math">/</button>
         <input type="text" placeholder="Number 2" id="number2" />
         <button id="equalBtn">=</button>
         <button id="clearBtn">C</button>
 
     </div>
+    <section>
+        <h2>= <span id="answer"></span></h2>
+        <ul id="equations">
 
-    <ul>
+        </ul>
 
-    </ul>
+
+    </section>
 
 
 </body>
