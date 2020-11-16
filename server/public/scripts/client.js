@@ -55,9 +55,9 @@ function appendCalculation(equationHistory) {
     $('#equations').empty();
     for (equation of equationHistory) {
         $('#answer').empty();
-        $('#answer').append(` ${item.answer}`);
+        $('#answer').append(` ${equation.answer}`);
         $('#equations').append(`
-        <li>${item.firstNumber} ${item.operator} ${item.secondNumber} = ${item.answer}</li>
+        <li>${equation.firstNumber} ${equation.operator} ${equation.secondNumber} = ${equation.answer}</li>
         `);
     }
 }
