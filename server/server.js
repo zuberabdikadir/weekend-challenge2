@@ -5,7 +5,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 // This creates an instance of the express web server
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 // Setup bodyParser - parses the body of the request
 // jquery $.ajax uses urlencoded
 app.use(bodyParser.urlencoded({
