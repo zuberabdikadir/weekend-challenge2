@@ -17,35 +17,32 @@ app.use(bodyParser.json());
 app.use(express.static('server/public'));
 
 // array to hold answers and data
-let calculationData = [];
-let answerArr = [];
-
+let equationHistory = [];
 
 //routes
 app.get('/calculation', function (req, res) {
-    console.log('GET hit');
-    res.send(answerArr);
+    console.log('sending calculations...');
+    res.send(equationHistory);
 });
 
 app.post('/calculation', (req, res) => {
-    answerArr = req.body;
-    console.log('CalculationData =', calculationData)
+    let calculationData = req.body;
+    performCalculation(calculationData);
     res.sendStatus(200);
-    renderCalculation(calculationData)
-})
-function renderCalculation() {
-    if (calculationData.buttonPushed === '+') {
+});
+
+function performCalculation(calculationData) {
+    if (calculationData.operator === '+') {
         calculationData.answer = Number(calculationData.firstNumber) + Number(calculationData.secondNumber)
-    } else if (calculationData.buttonPushed === '-') {
+    } else if (calculationData.operator === '-') {
         calculationData.answer = Number(calculationData.firstNumber) - Number(calculationData.secondNumber)
-    } else if (calculationData.buttonPushed === '*') {
+    } else if (calculationData.operator === '*') {
         calculationData.answer = Number(calculationData.firstNumber) * Number(calculationData.secondNumber)
-    } else if (calculationData.buttonPushed === '/') {
+    } else if (calculationData.operator === '/') {
         calculationData.answer = Number(calculationData.firstNumber) / Number(calculationData.secondNumber)
     }
-    answerArr.push(calculationData)
-    console.log('Addition Array', answerArr)
-    calculationData = {};
+    calculationData.equation = (`${calculationData.firstNumber} ${calculationData.operator} ${calculationData.secondNumber} = ${calculationData.answer}`)
+    equationHistory.push(calculationData);
 }
 
 
